@@ -1,8 +1,26 @@
-// Funçao que retorna o maior numero entre 2 numeros
-// Funcçao que retorna se uma imagem esta no modo paisagem
+/**Escreva uma funçao que recebe um numero e retorne os seguintes dados:
+ * Divisivel por 3 = Fizz
+ * Divisivel por 3 e por 5 = Buzz
+ * Divisivel por 3 e por 5 = FizzBuzz
+ * Nao é divisivel por 3 nem por 5 = Retorne o proprio numero
+ * Checar se o valor inserido é realmente um numero
+ * Use numeros de 0 a 100
+ */
 
-const maxNumber = (x, y) => x > y ? console.log(`O numero maior é ${x}`) : console.log(`O numero maior é ${y}`);
-console.log(maxNumber(130, 250));
+const mod3 = 'Fizz';
+const mod5 = 'Buzz';
 
-const ePaisagem = (width, height) => width > height ? console.log(`A imagem está no modo paisagem`) : console.log(`A imagem está no modo retrato`);
-console.log(ePaisagem(1920, 1080))
+const modNumber = (x) => {
+    while(!isNaN(x)){
+        if(x % 3 === 0 && x % 5 === 0)
+            return mod3 + mod5;
+        else if(x % 5 === 0)
+            return mod5;
+        else if (x % 3 === 0)
+            return mod3;
+        else return x;
+    }    
+}
+for (let i = 0 ; i <= 50 ; i++){
+    console.log(i, modNumber(i));
+}
